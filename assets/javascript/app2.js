@@ -1,25 +1,24 @@
-$("button").on("click", function() {
-    let url = $(this).attr("data-term");
-    let queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
-    url += '?' + $.param({
-      'api-key': "9c3e92afd78742d8a604dbbedb0d2411"
-    });
-
-    $.ajax({
-        url: queryURL,
-        method: 'GET'
+$("#searchButton").on("click", function(){
+    console.log("this works");
     
-        .then(function(response) {
-            let results = response.data;
+    let searchTerm = $("#searchTerm").val();
+    console.log(searchTerm);
 
-            
+    let retrieveRecords = $("#retrieveRecords").val();
+    console.log(retrieveRecords);
+
+    let startYear = $("#startYear").val();
+    console.log(startYear);
+
+    let endYear = $("#endYear").val();
+    console.log(endYear);
+
+
+})
 
 
 
 
 
 
-        })
-
-    });
-  });
+    
