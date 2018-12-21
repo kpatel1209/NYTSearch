@@ -1,5 +1,5 @@
 $("#searchButton").on("click", function(){
-    console.log("this works");
+    //console.log("this works");
     
     let searchTerm = $("#searchTerm").val();
     console.log(searchTerm);
@@ -12,6 +12,8 @@ $("#searchButton").on("click", function(){
 
     let endYear = $("#endYear").val();
     console.log(endYear);
+
+    getResults(searchTerm, retrieveRecords, startYear, endYear);
 
 
 })
