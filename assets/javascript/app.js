@@ -8,18 +8,20 @@ let urlParams = {
     'page': "5",
 }
 
+function getResults() {
 
-queryUrl += "?" + $.param(urlParams);
+    queryUrl += "?" + $.param(urlParams);
 
-$.ajax({
-    url: queryUrl,
-    method: "GET",
-}).done(function(result) {
-    console.log(result);
-}).fail(function(err) {
-    throw err;
-})
-
-function fillHTMl() {
-
+    $.ajax({
+        url: queryUrl,
+        method: "GET",
+    }).done(function (result) {
+        console.log(result);
+        //return result;
+    }).fail(function (err) {
+        throw err;
+    })
 }
+
+
+getResults();
