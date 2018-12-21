@@ -9,6 +9,10 @@ let urlParams = {
 }
 
 function getResults(searchTerm, numRecords, startDate, endDate) {
+    urlParams.q = searchTerm;
+    urlParams.page = numRecords;
+    urlParams.begin_date = startDate;
+    urlParams.end_date = endDate;
 
     queryUrl += "?" + $.param(urlParams);
 
@@ -17,11 +21,14 @@ function getResults(searchTerm, numRecords, startDate, endDate) {
         method: "GET",
     }).done(function (result) {
         console.log(result);
-        //return result;
+        let article = $("<div>");
+        let header = $("<p>").text(result.response.docs[0].headline.main);
+        article.append(header);
+        $("#display").append(article);
     }).fail(function (err) {
         throw err;
     })
 }
 
 
-getResults();
+//getResults();
