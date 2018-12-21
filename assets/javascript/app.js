@@ -8,7 +8,7 @@ let urlParams = {
     'page': "5",
 }
 
-function getResults() {
+function getResults(searchTerm, numRecords, startDate, endDate) {
 
     queryUrl += "?" + $.param(urlParams);
 
