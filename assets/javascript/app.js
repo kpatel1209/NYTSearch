@@ -1,17 +1,17 @@
-const queryUrl = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
-const apiKey = "9c3e92afd78742d8a604dbbedb0d2411";
+let queryUrl = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
 
 let urlParams = {
-    searchTerm: "animals",
-    startDate: "19980912",
-    endDate: "20080912",
-    numOfRecords: "5",
+    'api-key': "9c3e92afd78742d8a604dbbedb0d2411",
+    'q': "animals",
+    'begin_date': "19980912",
+    'end_date': "20080912",
+    'page': "5",
 }
 
 
-queryUrl += "?" + $.param({urlParams});
+queryUrl += "?" + $.param(urlParams);
 
-$ajax({
+$.ajax({
     url: queryUrl,
     method: "GET",
 }).done(function(result) {
